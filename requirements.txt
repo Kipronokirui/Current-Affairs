@@ -12,9 +12,9 @@ django-js-asset
 django-templated-mail==1.1.1
 djangorestframework==3.14.0
 djangorestframework-simplejwt==5.2.2
-djoser==2.2.0
-drf-yasg==1.21.7
-idna==3.4
+djoser
+drf-yasg
+idna
 inflection==0.5.1
 oauthlib==3.2.2
 packaging==23.1
