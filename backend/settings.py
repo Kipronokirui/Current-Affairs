@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'djoser',
     'rest_framework_simplejwt',
+    'drf_yasg',
     'posts'
 ]
 
