@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import { posts } from '@/constants/blogs'
 
-const BlogSection = () => {
+export default function BlogSection(){
   return (
     <div className="bg-white py-24 sm:py-32">
     <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -64,5 +64,3 @@ const BlogSection = () => {
   </div>
   )
 }
-
-export default BlogSection

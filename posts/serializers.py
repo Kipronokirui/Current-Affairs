@@ -15,7 +15,7 @@ class CommentSerializer(serializers.ModelSerializer):
     sub_comments = serializers.SerializerMethodField()
     class Meta:
         model = Comment
-        fields = ['id', 'comment', 'published_at', 'edited_at', 'post', 'sub_comments']
+        fields = ['id', 'comment', 'published_at', 'edited_at', 'post', 'author', 'sub_comments']
         
     def get_sub_comments(self, obj):
         sub_comments = obj.sub_comments.all()
@@ -41,7 +41,7 @@ class PostSerializer(serializers.ModelSerializer):
 class CreatePostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
-        fields = ['title', 'description', 'display_image', 'category']
+        fields = ['title', 'description', 'display_image', 'category', 'author']
 
 class CategorySerializer(serializers.ModelSerializer):
     posts = serializers.SerializerMethodField()
