@@ -20,7 +20,7 @@ class Post(models.Model):
     # description = RichTextField()
     description = RichTextUploadingField()
     category = models.ForeignKey(Category, related_name='posts', on_delete=models.CASCADE)
-    display_image = models.ImageField()
+    display_image = models.ImageField(upload_to='images/')
     slug = AutoSlugField(populate_from='title', unique=True)
     published_at = models.DateTimeField(auto_now_add=True)
     edited_at = models.DateTimeField(auto_now=True)

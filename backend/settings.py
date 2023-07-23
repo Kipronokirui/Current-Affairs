@@ -1,6 +1,7 @@
 
 from pathlib import Path
 from datetime import timedelta
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -117,6 +118,8 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / "static"] # new
 STATIC_ROOT = BASE_DIR / "staticfiles" # new
+MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 CKEDITOR_UPLOAD_PATH = "ckuploads/"
 
 # Default primary key field type

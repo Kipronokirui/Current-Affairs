@@ -29,14 +29,18 @@ class CreateCommentSerializer(serializers.ModelSerializer):
 
 class PostSerializer(serializers.ModelSerializer):
     comments = serializers.SerializerMethodField()
+    image_url = serializers.SerializerMethodField('get_image_url')
     class Meta:
         model = Post
-        fields = ['id', 'title', 'description', 'display_image', 'slug', 'published_at', 'edited_at', 'post_id', 'comments']
+        fields = ['id', 'title', 'description', 'display_image', 'image_url', 'slug', 'published_at', 'edited_at', 'post_id', 'comments']
         
     def get_comments(self, obj):
         comments = obj.comments.all()
         serializer = CommentSerializer(comments, many=True)
         return serializer.data
+    def get_image_url(self, obj):
+        request = self.context.get("request")
+        return request.build_absolute_uri(obj.display_image.url)
 
 class CreatePostSerializer(serializers.ModelSerializer):
     class Meta:
