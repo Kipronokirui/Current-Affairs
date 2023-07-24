@@ -1,11 +1,11 @@
 import React from 'react'
-import { comments } from '@/constants/comments'
+// import { comments } from '@/constants/comments'
 
-const BlogComments = () => {
+export default function BlogComments({comments}:any) {
   return (
       <>
           <div className="flex justify-between items-center mb-2">
-            <h2 className="text-lg lg:text-2xl font-bold text-gray-900 dark:text-white">Discussion (20)</h2>
+            <h2 className="text-lg lg:text-2xl font-bold text-gray-900 dark:text-white">Discussion ({comments.length})</h2>
           </div>
             <form className="mb-6">
                   <div className="py-2 px-4 mb-4 bg-white rounded-lg rounded-t-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
@@ -123,5 +123,3 @@ const BlogComments = () => {
       </>
   )
 }
-
-export default BlogComments
